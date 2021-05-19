@@ -1,0 +1,33 @@
+{
+    "schemaVersion": 1,
+    "id": "leather-blocks",
+    "version": "${version}",
+    "name": "Leather Blocks",
+    "description": "Adds a leather block to the game which can be dyed like leather armor.",
+    "authors": [
+        "ARM32"
+    ],
+    "contact": {
+        "email": "arm32x@gmail.com",
+        "issues": "https://github.com/arm32x/leather-blocks",
+        "sources": "https://github.com/arm32x/leather-blocks"
+    },
+    "license": "MPL-2.0",
+    "environment": "*",
+    "entrypoints": {
+        "client": [
+            "arm32x.minecraft.leatherblocks.client.LeatherBlocksClient"
+        ],
+        "main": [
+            "arm32x.minecraft.leatherblocks.LeatherBlocks"
+        ]
+    },
+    "mixins": [
+        "leather-blocks.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=0.11.3",
+        "fabric": "*",
+        "minecraft": "1.16.5"
+    }
+}

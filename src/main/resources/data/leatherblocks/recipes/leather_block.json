@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "ILI",
+        "LWL",
+        "ILI"
+    ],
+    "key": {
+        "I": {
+            "item": "minecraft:iron_nugget"
+        },
+        "L": {
+            "item": "minecraft:leather"
+        },
+        "W": {
+            "tag": "minecraft:planks"
+        }
+    },
+    "result": {
+        "item": "leatherblocks:leather_block",
+        "count": 2
+    }
+}
