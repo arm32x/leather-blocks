@@ -12,6 +12,7 @@
         "issues": "https://github.com/arm32x/leather-blocks",
         "sources": "https://github.com/arm32x/leather-blocks"
     },
+    "icon": "assets/leatherblocks/icon.png",
     "license": "MPL-2.0",
     "environment": "*",
     "entrypoints": {
