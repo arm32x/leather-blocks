@@ -5,7 +5,7 @@ import net.fabricmc.fabric.api.block.entity.BlockEntityClientSerializable;
 import net.fabricmc.fabric.api.rendering.data.v1.RenderAttachmentBlockEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import org.jetbrains.annotations.NotNull;
@@ -14,29 +14,29 @@ public final class LeatherBlockEntity extends BlockEntity implements BlockEntity
 	public static final int DEFAULT_COLOR = 0xA06540;
 	public int color = DEFAULT_COLOR;
 
-	public LeatherBlockEntity() {
-		super(LeatherBlocks.LEATHER_BLOCK_ENTITY);
+	public LeatherBlockEntity(BlockPos pos, BlockState state) {
+		super(LeatherBlocks.LEATHER_BLOCK_ENTITY, pos, state);
 	}
 
 	@Override
-	public void fromTag(BlockState state, CompoundTag tag) {
-		super.fromTag(state, tag);
+	public void readNbt(NbtCompound tag) {
+		super.readNbt(tag);
 		fromClientTag(tag);
 	}
 
 	@Override
-	public void fromClientTag(CompoundTag tag) {
+	public void fromClientTag(NbtCompound tag) {
 		color = tag.getInt("color");
 	}
 
 	@Override
-	public CompoundTag toTag(CompoundTag tag) {
-		super.toTag(tag);
+	public NbtCompound writeNbt(NbtCompound tag) {
+		super.writeNbt(tag);
 		return toClientTag(tag);
 	}
 
 	@Override
-	public CompoundTag toClientTag(CompoundTag tag) {
+	public NbtCompound toClientTag(NbtCompound tag) {
 		tag.putInt("color", color);
 		return tag;
 	}

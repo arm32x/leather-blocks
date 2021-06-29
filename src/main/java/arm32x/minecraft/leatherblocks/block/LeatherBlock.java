@@ -18,8 +18,8 @@ public final class LeatherBlock extends Block implements BlockEntityProvider {
 	}
 
 	@Override
-	public BlockEntity createBlockEntity(BlockView world) {
-		return new LeatherBlockEntity();
+	public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+		return new LeatherBlockEntity(pos, state);
 	}
 
 	@Override
