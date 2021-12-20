@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "leatherblocks:block/leather_block"
+        }
+    }
+}
