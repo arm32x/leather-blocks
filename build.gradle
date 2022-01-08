@@ -5,7 +5,7 @@ plugins {
 }
 
 androidGitVersion {
-    format "%tag%%+count%%.commit%%.dirty%"
+    format "%tag%%.count%%.commit%%.dirty%"
     untrackedIsDirty true
 }
 
