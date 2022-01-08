@@ -15,7 +15,8 @@ public final class LeatherBlockItem extends BlockItem implements DyeableItem {
 	public ActionResult place(ItemPlacementContext context) {
 		ActionResult result = super.place(context);
 		BlockEntity blockEntity = context.getWorld().getBlockEntity(context.getBlockPos());
-		if (blockEntity instanceof LeatherBlockEntity leatherBlockEntity) {
+		if (blockEntity instanceof LeatherBlockEntity) {
+			LeatherBlockEntity leatherBlockEntity = (LeatherBlockEntity)blockEntity;
 			leatherBlockEntity.color = getColor(context.getStack());
 		}
 		return result;

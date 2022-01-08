@@ -3,11 +3,11 @@ package arm32x.minecraft.leatherblocks;
 import arm32x.minecraft.leatherblocks.block.LeatherBlock;
 import arm32x.minecraft.leatherblocks.block.LeatherBlockEntity;
 import arm32x.minecraft.leatherblocks.item.LeatherBlockItem;
-import dev.architectury.platform.Platform;
-import dev.architectury.registry.client.rendering.ColorHandlerRegistry;
-import dev.architectury.registry.registries.DeferredRegister;
-import dev.architectury.registry.registries.RegistrySupplier;
-import dev.architectury.utils.Env;
+import me.shedaniel.architectury.platform.Platform;
+import me.shedaniel.architectury.registry.ColorHandlers;
+import me.shedaniel.architectury.registry.DeferredRegister;
+import me.shedaniel.architectury.registry.RegistrySupplier;
+import me.shedaniel.architectury.utils.Env;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.Block;
@@ -39,7 +39,7 @@ public class LeatherBlocks {
 
 	@Environment(EnvType.CLIENT)
 	public static void initClient() {
-		ColorHandlerRegistry.registerBlockColors(((state, world, pos, tintIndex) -> LeatherBlockEntity.getColor(world, pos)), LeatherBlocks.LEATHER_BLOCK);
-		ColorHandlerRegistry.registerItemColors(((stack, tintIndex) -> LeatherBlocks.LEATHER_BLOCK_ITEM.get().getColor(stack)), LeatherBlocks.LEATHER_BLOCK_ITEM);
+		ColorHandlers.registerBlockColors(((state, world, pos, tintIndex) -> LeatherBlockEntity.getColor(world, pos)), LeatherBlocks.LEATHER_BLOCK);
+		ColorHandlers.registerItemColors(((stack, tintIndex) -> LeatherBlocks.LEATHER_BLOCK_ITEM.get().getColor(stack)), LeatherBlocks.LEATHER_BLOCK_ITEM);
 	}
 }
